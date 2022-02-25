@@ -1,0 +1,560 @@
+Delivered-To: rkhurshid@padillainc.com
+Received: by 2002:a17:906:3cc:0:0:0:0 with SMTP id c12csp2112514eja;
+        Sun, 5 Dec 2021 04:28:56 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJyPfDXzuj6WujK5xP1RXYaoG6nOXZFglFw/R6oTt1gRsEx6+gDz5aRhzleXtLJAdChfbE9n
+X-Received: by 2002:ae9:e905:: with SMTP id x5mr27216301qkf.468.1638707336252;
+        Sun, 05 Dec 2021 04:28:56 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1638707336; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ikh4c54rWljM0fi2yPptEt65jDslGmr7IuPpW0bbGWmw0A04J/lQygzCIr1zAtVXSS
+         AhiOwqN6X5LAL38kCXCNj8f3716Fhb/c9/kFNQoUtQq+PD9Ok9NGTE4uTCW/IRwMyeET
+         aeBKJHYDYvQ3gedIPWciNxzsHdQalEuISy3hPK/XyIQDhEJ+f0X7WTqzDznRpUhfHKf2
+         uymwqloQLsirlNGLU74LYB0A+d36doaoWIcqZj6oIGwfk/2cANXt1THhBJLVeLpGgyzi
+         dO4LOyQLeWAXNh7gjBjHPV/EO1nfqFCMgvM1yQ0n6EuwdChTNjtpqjdakEhkiy9ZPcmp
+         BRIQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-id:reply-to:mime-version:list-unsubscribe-post
+         :list-unsubscribe:date:subject:to:from:dkim-signature;
+        bh=T+yMsT1oWy7tF/h7Uqk0Oin8a9U3ShJZR/ljMfAY87E=;
+        b=wQwHh1ZI+xpfNv9mXSOD/ws9MTJaZrQPnSIQdbgaUgLyaYKHwsR24o++1NJiBEVhV4
+         dQrxD7jnCsj5pKllJwdDYZS5tBAAZI61vwbIbXA03Tc/a6ZKXA/qmSKs7XnKYHJNta0i
+         5TUU9m9G258gEkYVgUqtwIRxm79WRO4ijRd454Zn6kw6CcRoWoaR3jq6H6jlL1dj26Qi
+         sCcnnXGviDK0nyjwoPZIfTu1yNqDl2FIRW6Z978a7ynhZlnA1n/zEyPzV9tESY3tN3e4
+         zRBj3yyD0si2Dq1sR4oSj3Bv1IVkRXGa0FdQDDbgFdNc5b4BFLCHE33IVb7L1EMA9+ar
+         a8PA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@send.grammarly.com header.s=gram2048 header.b=eUrMK29U;
+       spf=pass (google.com: domain of bounce-48964_html-669290363-3961708-6424583-3396@bounce.send.grammarly.com designates 13.111.27.230 as permitted sender) smtp.mailfrom=bounce-48964_HTML-669290363-3961708-6424583-3396@bounce.send.grammarly.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=send.grammarly.com
+Return-Path: <bounce-48964_HTML-669290363-3961708-6424583-3396@bounce.send.grammarly.com>
+Received: from mta7.send.grammarly.com (mta7.send.grammarly.com. [13.111.27.230])
+        by mx.google.com with ESMTPS id z12si10047167qtw.115.2021.12.05.04.28.55
+        for <rkhurshid@padillainc.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 05 Dec 2021 04:28:56 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-48964_html-669290363-3961708-6424583-3396@bounce.send.grammarly.com designates 13.111.27.230 as permitted sender) client-ip=13.111.27.230;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@send.grammarly.com header.s=gram2048 header.b=eUrMK29U;
+       spf=pass (google.com: domain of bounce-48964_html-669290363-3961708-6424583-3396@bounce.send.grammarly.com designates 13.111.27.230 as permitted sender) smtp.mailfrom=bounce-48964_HTML-669290363-3961708-6424583-3396@bounce.send.grammarly.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=send.grammarly.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=gram2048; d=send.grammarly.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=info@send.grammarly.com;
+ bh=T+yMsT1oWy7tF/h7Uqk0Oin8a9U3ShJZR/ljMfAY87E=;
+ b=eUrMK29UjCamlU1uUreM7My8NwlG6oOL5NsPN/pv3fFxhdLlJyL2dDjxVKQqbcG9+Y2s617Qb1Fi
+   AR9snZbmt8Uz+U39vr9cBecFDWc45jwFwYLTCpK17d+sL8HjBd9JW0V7xL3aghhTSMBBKms9qNKh
+   ueKnS7+IYakoZ+vgIzZBF3HTxRbKYC4L+oVJNTchgIKKNmv7TjTazPqbyyTCOa54jpv8njdnNsnz
+   whJs+Nahg2epGcsUjV3YoyMF6GVqRd2CFJkdJNRregSkTVnGG8c1HsQRyb7eVFv/3c34SnXe+/hS
+   WlcFhALO6rHxQM9P3IjCNbeGZRa3gSFC0eP/uw==
+Received: by mta7.send.grammarly.com id hlio8g2fmd44 for <rkhurshid@padillainc.com>; Sun, 5 Dec 2021 12:28:54 +0000 (envelope-from <bounce-48964_HTML-669290363-3961708-6424583-3396@bounce.send.grammarly.com>)
+From: "Grammarly Premium" <info@send.grammarly.com>
+To: <rkhurshid@padillainc.com>
+Subject: LAST DAY: 50% off all Premium plans
+Date: Sun, 05 Dec 2021 06:28:54 -0600
+List-Unsubscribe: <https://click.send.grammarly.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI2NDI0NTgzIiwicyI6IjY2OTI5MDM2MyIsImxpZCI6IjQ4OTY0IiwiaiI6IjM5NjE3MDgiLCJqYiI6IjMzOTYiLCJkIjoiNjAxNjgifQ.ekPl4qtx96NGEXAe344RV0odrYPFFmfJ2VVUPkJAiNk>, <mailto:leave-fcdc10787c6200122d502d29-fe2312767c660d7d761273-fe8d17797365037d7d-fe8f12747760017576-ff2a17737c62@leave.send.grammarly.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "No Reply" <reply-fe8d17797365037d7d-48964_HTML-669290363-6424583-3396@send.grammarly.com>
+List-ID: <6424583.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 6
+x-job: 6424583_3961708
+Message-ID: <be495fb6-49a0-4ecf-8756-6f70d1f31661@ind1s06mta1890.xt.local>
+Content-Type: multipart/alternative;
+	boundary="wkEBZ5C1Iq2g=_?:"
+
+This is a multi-part message in MIME format.
+
+--wkEBZ5C1Iq2g=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Grammarly
+
+
+
+ 
+
+
+ 
+ 
+ 
+ 
+https://click.send.grammarly.com/?qs=6e79c037309ac65d1c7a5c4fb7f9e85e368c84ccd27e75b31b2cfeca97b7b8232a96c94d6a986e681ee4673635ca562d695bca5d0ab1e799edd64ef8160d0cda 
+
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65d1c7a5c4fb7f9e85e368c84ccd27e75b31b2cfeca97b7b8232a96c94d6a986e681ee4673635ca562d695bca5d0ab1e799edd64ef8160d0cda 
+
+
+
+Take the helm and get your writing in shipshape! Upgrade by midnight tonight to save 50% on a monthly, quarterly, or annual Premium plan. Navigate uncharted waters confidently and swiftly every time you type.
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65d1c7a5c4fb7f9e85e368c84ccd27e75b31b2cfeca97b7b8232a96c94d6a986e681ee4673635ca562d695bca5d0ab1e799edd64ef8160d0cda 
+Upgrade Now 
+
+
+
+Wondering how Grammarly Premium can help you?
+
+
+We surveyed thousands of Grammarly users and found that: 
+
+
+
+ 
+
+ 
+
+	- 92% saved time writing and editing their work
+	- 76% increased their confidence when communicating with others
+	- 1 in 4 received feedback that their communication improved
+
+
+Don&rsquo;t Let These Savings
+
+Go Out With the Tide
+
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65d1c7a5c4fb7f9e85e368c84ccd27e75b31b2cfeca97b7b8232a96c94d6a986e681ee4673635ca562d695bca5d0ab1e799edd64ef8160d0cda 
+
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65d1c7a5c4fb7f9e85e368c84ccd27e75b31b2cfeca97b7b8232a96c94d6a986e681ee4673635ca562d695bca5d0ab1e799edd64ef8160d0cda 
+Upgrade Now 
+
+
+ 
+
+   
+ 
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65d599a8e7a30d7564c342eb5f4cab851b3620379a7614bc7ba5e2cfce1f8fe63c912c97d4af5b3179a3532305855e322b1 
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65dedfac37c55b933cc073dfcd7a11e2d36c11d939855df216cccd5ba2fd75429525afd7b859257eb55dff54b0666945bcb 
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65d0a10b1d73f43717508c35b8131f6a35e6ea7a3c39fe8b02b110d967321406423ac054c96d24eb2c5b5d878c0563797c0 
+
+https://click.send.grammarly.com/?qs=6e79c037309ac65ddbe7e06b3f528513558bcf6fdbe8c2b27deb870d76677ca67e879a1fc83cbb893b7cbf11801bb665e8bd3b25d2bbbbb8 
+
+
+ 
+
+ 
+
+ 
+
+https://view.send.grammarly.com/?qs=3922fb457e63787a6c47c1f50b1f53ec97b125c5f9a43cce48a979fb550054b60f20b75c64db3976880136cc5a8046e3fa1e2d2e2a6eaf8a99f5b08b155477db9c7a3f7983cedd17caebbaf68ff408aab9b1815fdad2042f 
+View Web Version   .  
+https://click.send.grammarly.com/?qs=6e79c037309ac65dd46d88ccd2843b39e9208fbbfa24714a687312aa1d6ecae7b29cd3fd4140dc98b739358ef21ef2fe9896e99ffd6cb935e7d486426385cabb 
+Email Preferences   .  
+https://click.send.grammarly.com/?qs=6e79c037309ac65dd46d88ccd2843b39e9208fbbfa24714a687312aa1d6ecae7b29cd3fd4140dc98b739358ef21ef2fe9896e99ffd6cb935e7d486426385cabb 
+Unsubscribe 
+
+
+ 
+
+You received this offer for Grammarly Premium because you are currently opted in to receive them via your preference settings. You may adjust your preferences at any time by clicking the link above.
+
+
+(c) 2021 Grammarly, Inc. 548 Market St. #35410, San Francisco, CA 94104
+
+
+ 
+
+
+ 
+
+
+
+--wkEBZ5C1Iq2g=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<!--[if gte mso 9]><xml>  <o:OfficeDocumentSettings>   <o:AllowPNG/>   <o:PixelsPerInch>96</o:PixelsPerInch>  </o:OfficeDocumentSettings> </xml><![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="date=no">
+<meta name="format-detection" content="address=no">
+<meta name="format-detection" content="email=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="x-apple-disable-message-reformatting">
+<meta name="robots" content="noindex" />
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Grammarly</title>
+<style type="text/css">
+ReadMsgBody{ width: 100%;}
+.ExternalClass {width: 100%;}
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+body {-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;margin:0 !important;}
+/*  
+* {padding: 0px;margin: 0px;}
+*/
+html {-webkit-text-size-adjust: none;-webkit-font-smoothing: antialiased;}
+a {outline: 0;}
+img {display: block;outline:0;}
+a img {border:none;}
+td {mso-line-height-rule: exactly;}
+table td {border-collapse: collapse;}
+@-ms-viewport{ width: device-width;}
+a[x-apple-data-detectors] {
+ color: inherit !important;
+ text-decoration: none !important;
+ font-size: inherit !important;
+ font-family: inherit !important;
+ font-weight: inherit !important;
+ line-height: inherit !important;
+}
+</style>
+<style type="text/css">
+/**Template CSS**/
+  
+/*Font Settings*/
+
+@font-face {
+ font-family: 'Inter';
+ font-style: normal;
+ font-weight: 400;
+ mso-generic-font-family: swiss;
+ font-display: swap;
+ mso-font-alt: Helvetica, Arial, sans-serif;
+ src: url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-regular.otf') format('otf'),
+ url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-regular.woff2') format('woff2');
+}
+
+@font-face {
+ font-family: 'Inter';
+ font-style: normal;
+ font-weight: 700;
+ mso-generic-font-family: swiss;
+ font-display: swap;
+ mso-font-alt: Helvetica, Arial, sans-serif;
+ src: url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-bold.otf') format('otf'),
+ url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-bold.woff2') format('woff2');
+}
+
+@font-face {
+ font-family: 'Inter';
+ font-style: italic;
+ font-weight: 400;
+ mso-generic-font-family: swiss;
+ font-display: swap;
+ mso-font-alt: Helvetica, Arial, sans-serif;
+ src: url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-italic.otf') format('otf'),
+ url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-italic.woff2') format('woff2');
+}
+ 
+@font-face {
+ font-family: 'Inter';
+ font-style: italic;
+ font-weight: 700;
+ mso-generic-font-family: swiss;
+ font-display: swap;
+ mso-font-alt: Helvetica, Arial, sans-serif;
+ src: url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-bold-italic.otf') format('otf'),
+ url('https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-bold-italic.woff2') format('woff2');
+}
+/* TYPOGRAPHY */
+td, p, a, span, strong {
+ font-family: 'Inter', Helvetica, Arial, sans-serif;
+ font-weight: 400;
+ color:#FFFFFF;
+  /*
+ padding: 0;
+ margin: 0;
+  */
+}
+a {color:#4A6EE0;text-decoration:underline !important;}
+li {
+ font-family: 'Inter', Helvetica, Arial, sans-serif;
+ font-weight: 400;
+ color:#FFFFFF;
+}
+.h1 {
+ font-family: 'Inter', Helvetica, Arial, sans-serif;
+ font-weight: 700;
+ font-size:32px;
+ line-height:48px;
+ color:#FFFFFF;
+}
+.h2 {
+ font-family: 'Inter', Helvetica, Arial, sans-serif;
+ font-weight: 700;
+ font-size:24px;
+ line-height:32px;
+ color:#FFFFFF;
+}
+.h3 {
+ font-family: 'Inter', Helvetica, Arial, sans-serif;
+ font-weight: 700;
+ font-size:18px;
+ line-height:24px;
+ color:#FFFFFF;
+}
+sup, sub {
+ vertical-align: baseline;
+ position: relative;
+ top: -0.4em;
+}
+</style>
+<style type="text/css">
+@media only screen and (max-width: 480px) {
+/*CB STYLES*/
+ .container {width: 100% !important;}
+ .footer { width:auto !important; margin-left:0; }
+ .mobile-hidden { display:none !important; }
+ .logo { display:block !important; padding:0 !important; }
+ img { max-width:100% !important; height:auto !important; max-height:auto !important;}
+ .header img{max-width:100% !important;height:auto !important; max-height:auto !important;}
+ .photo img { width:100% !important; max-width:100% !important; height:auto !important;}
+ .drop { display:block !important; width: 100% !important; float:left; clear:both;}
+ .footerlogo { display:block !important; width: 100% !important; padding-top:15px; float:left; clear:both;}
+ .nav4, .nav5, .nav6 { display: none !important; }
+ .tableBlock {width:100% !important;}
+ .responsive-td {width:100% !important; display:block !important; padding:0 !important; }
+ .fluid, .fluid-centered {
+   width: 100% !important;
+   max-width: 100% !important;
+   height: auto !important;
+   margin-left: auto !important;
+   margin-right: auto !important;
+ }
+ .fluid-centered {
+   margin-left: auto !important;
+   margin-right: auto !important;
+ }
+ 
+ table .stylingblock-content-wrapper {border:none !important;}
+/** Universal Styles **/
+/** Mobile Typography **/
+ * { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;}/*Stop iproducts from auto-resizing text*/
+ .height {height:auto !important;}
+ .hide {display:none !important;}
+ .stack  {display:block !important;width:100% !important;}
+ .w100P {width:100% !important; height:auto !important;}
+ .textC {text-align:center !important;}
+ .marginCenter table {margin:0 auto !important;}
+ .show {display: block !important; max-height: none !important; overflow:visible !important; line-height:normal !important;}
+ .showTable {display: inline-block !important;}
+/** Mobile Typography **/
+h1 {
+ font-family: 'Inter', Helvetica, Arial, sans-serif;
+ font-weight: 700;
+ font-size:28px;
+ line-height:40px;
+}
+/*** Header ***/
+ .LogoMobilePadding {padding-left:16px !important;}  
+/*** Footer ***/
+ .MobileTableWidth {width:91% !important;}
+    
+/*** Card Styles ***/
+ .w24 {width:24px !important;}
+ .w56 {width:56px !important;}
+ .w80 {width:80px !important;}
+ .w104 {width:104px !important;}
+ .hw64 {width:64px !important;height:64px !important;}
+ .hw158 {width:158px !important;height:158px !important;}
+ .dirLTR {direction:ltr !important;}
+}
+</style>
+<style type="text/css">
+:root {
+color-scheme: light dark;
+supported-color-schemes: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  
+td, p, span, a, li {color:#ffffff !important;}  
+
+.darkBody {background-color:#000001 !important;}
+.lightimage {display: none !important;}
+.darkimageWrapper, .darkimage {display: block !important;}
+
+.darkModeBG {background-color:#0E101A !important;}
+.DarkHeader {background-color:#0E101A !important;}
+.darkModeDarkCopy {color:#000001 !important;} 
+.darkModeLink {color:#4A6EE0 !important;} 
+
+
+[data-ogsc] .darkBody {background-color:#000001 !important;}
+[data-ogsc] .lightimage { display: none !important;}
+[data-ogsc] .darkimageWrapper, [data-ogsc] .darkimage {display: block !important;}
+
+}
+
+[data-ogsc] .lightimage { display: none !important;}
+[data-ogsc] .darkimageWrapper, [data-ogsc] .darkimage {display: block !important;}
+
+</style>
+<!--USER INFO-->
+
+<!--https://www.grammarly.com/-->
+
+<!--DISCOUNT INFO-->
+ 
+
+</head>
+
+<body class="body darkModeBG" bgcolor="#0E101A" style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding:0;"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">🛥️ 👋 Don’t miss the boat! This deal ends at midnight tonight.</div>
+    <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" class="darkModeBG" bgcolor="#0E101A">
+        <tr>
+            <td align="center" valign="top">
+                <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container" style="margin:0 auto;">
+                    <tr>
+                        <td valign="top">
+
+                         <!--Body-->
+                         <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="left" class="LogoMobilePadding" height="82" valign="middle">
+				<a alias="" href="" style="text-decoration:none;border:0;display:inline-block;" target="_blank" title="Grammarly"> </a><a alias="" conversion="false" data-linkto="other" href="" style="text-decoration:none;border:0;display:inline-block;" target="_blank" title="Grammarly"><img alt="Grammarly" data-assetid="74657" height="34" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/EBS-Grammarly-White_Logo.png" style="display: block; padding: 0px; text-align: center; height: 34px; width: 143px;" width="143"></a><a alias="" href="" style="text-decoration:none;border:0;display:inline-block;" target="_blank" title="Grammarly"> <!--[if !mso]><! --> </a> <!--<![endif]--></td></tr></table></td></tr></table>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td valign="top" bgcolor="#0E101A"  class="darkBody"> 
+                         <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #3659B5; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td valign="top" class="responsive-td" style="width: 100%; padding-bottom: 0px;"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table width="100%" cellspacing="0" cellpadding="0" role="presentation"><tr><td align="center">
+<a href="https://click.send.grammarly.com/?qs=2c98a701ea1da006bc86520ae73991020bd9f31be800f0f45cf200dda4aee0a2cb87dbe04a8d6a468c289a820c61434c0bbf753eb0c60163d5ed142099569d6a" title=""   data-linkto="other"><img data-assetid="77614" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/BFCM2021+CM3+Cyber-banner-lastchance-2x.png" alt="" width="600" style="display: block; padding: 0px; text-align: center; height: auto; width: 100%; border: 0px;"></a></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top">
+				<a   data-linkto="other" href="https://click.send.grammarly.com/?qs=2c98a701ea1da006bc86520ae73991020bd9f31be800f0f45cf200dda4aee0a2cb87dbe04a8d6a468c289a820c61434c0bbf753eb0c60163d5ed142099569d6a" target="_blank" title=""><img alt="" data-assetid="77615" height="560" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/BFCM2021+CM3+hero.gif" style="display: block; padding: 0px; height: 560px; width: 600px;" width="600"></a></td></tr></table></td></tr></table></td></tr></table></td></tr><tr><td><table cellspacing="0" cellpadding="0" role="presentation" style="width: 100%;"><tr><td valign="top" class="responsive-td" style="width: 100%; padding-top: 0px;"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #1F243C; min-width: 100%; " class="stylingblock-content-wrapper"><tr>
+<td style="padding: 0px 80px 20px; " class="stylingblock-content-wrapper camarker-inner">Take the helm and get your writing in shipshape! <b>Upgrade by midnight tonight to save 50% on a monthly, quarterly, or annual Premium plan.</b> Navigate uncharted waters confidently and swiftly every time you type.</td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #1F243C; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px 0px 72px; " class="stylingblock-content-wrapper camarker-inner"><table width="100%" border="0" cellspacing="0" cellpadding="10" role="presentation"><tr><td align="center"><table border="0" cellspacing="0" cellpadding="0" role="presentation"><tr><td class="innertd buttonblock" bgcolor="#11A683" style=" border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #11A683;">
+<a target="_blank" class="buttonstyles" style=" font-size: 14px; font-family: Inter, Helvetica, Arial, sans-serif; font-weight: 700; line-height: 32px; color: #FFFFFF; text-align: center; text-decoration: none; display: block; background-color: #11A683; border: 1px solid #11A683; padding: 8px 32px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;" href="https://click.send.grammarly.com/?qs=2c98a701ea1da006bc86520ae73991020bd9f31be800f0f45cf200dda4aee0a2cb87dbe04a8d6a468c289a820c61434c0bbf753eb0c60163d5ed142099569d6a" title=""   data-linkto="other">Upgrade Now</a></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td height="64" style="line-height:24px; font-size:64px; height:24px;">
+				&nbsp;</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #1F243C; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><!--H2 Headline + Copy--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" class="MobileTableWidth" width="87%">
+					
+						<tr>
+							<td style="text-align:left;padding-top:40px;padding-bottom:0px;" valign="middle">
+								<h3 style="">
+									<span class="h2">Wondering how Grammarly Premium can help you?</span></h3></td></tr><tr>
+							<td style="text-align:left;padding-bottom:40px;font-size:16px;line-height:24px;" valign="middle">
+								<br>
+								We surveyed thousands of Grammarly users and found that:&nbsp;</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #1F243C; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><!--Hero Side Image Article--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" style="padding-bottom:40px;" valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" class="MobileTableWidth" width="87%">
+					
+						<tr>
+							<td align="center" class="w80" valign="top" width="64">
+								<br>
+								<img alt="" border="0" class="w100P" data-assetid="77804" height="112" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/3/BFCM2021+CM+5+icon.png" style="display: block; border-radius: 6px; padding: 0px; text-align: center; height: 112px; width: 112px;" width="112"></td><td width="24">
+								&nbsp;</td><td align="left" valign="top">
+								<table border="0" cellpadding="0" cellspacing="0" width="100%">
+									
+										<tr>
+											<td align="left" valign="top">
+											</td></tr><tr>
+											<td height="8" style="line-height:8px; font-size:8px;height:8px;">
+												&nbsp;</td></tr><tr>
+											<td align="left" style="font-size:16px;line-height:24px;" valign="top">
+												<ul>
+													<li>
+														<span style="font-size:16px;"><b>92% saved time</b> writing and editing their work</span></li><li>
+														<span style="font-size:16px;"><b>76% increased their confidence</b> when communicating with others</span></li><li>
+														<span style="font-size:16px;"><b>1 in 4</b> received feedback that their communication improved</span></li></ul></td></tr></table></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td height="64" style="line-height:24px; font-size:64px; height:24px;">
+				&nbsp;</td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #1F243C; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><!--H2 Headline + Image--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" class="MobileTableWidth" width="87%">
+					
+						<tr>
+							<td align="center" style="padding-top:40px;" valign="middle">
+								<img alt="" border="0" class="hw64" data-assetid="77517" height="76" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/BFCM2021+BF+presale-diamond-icon-2x.png" style="display: block; border-radius: 5px; padding: 0px; text-align: center; height: 76px; width: 80px;" title="" width="80"></td></tr><tr>
+							<td style="text-align:center;padding-top:24px;padding-bottom:0px;" valign="middle">
+								<span class="h2">Don&rsquo;t Let These Savings<br>
+								Go Out With the Tide</span></td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #1F243C; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px; " class="stylingblock-content-wrapper camarker-inner"><!--H2 Headline + Image--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" class="MobileTableWidth" width="87%">
+					
+						<tr>
+							<td align="center" style="padding-top:40px;" valign="middle">
+								<a   data-linkto="other" href="https://click.send.grammarly.com/?qs=2c98a701ea1da006bc86520ae73991020bd9f31be800f0f45cf200dda4aee0a2cb87dbe04a8d6a468c289a820c61434c0bbf753eb0c60163d5ed142099569d6a" title=""><img alt="" data-assetid="77516" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/BFCM2021+BF+presale-comparison-chart-desktop-2x.png" style="display: block; border-radius: 5px; padding: 0px; text-align: center; height: auto; width: 100%;" width="600"></a></td></tr><tr>
+							<td style="text-align:center;padding-top:24px;padding-bottom:40px;" valign="middle">
+							</td></tr></table></td></tr></table></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="background-color: #1F243C; min-width: 100%; " class="stylingblock-content-wrapper"><tr><td style="padding: 0px 0px 72px; " class="stylingblock-content-wrapper camarker-inner"><table width="100%" border="0" cellspacing="0" cellpadding="10" role="presentation"><tr><td align="center"><table border="0" cellspacing="0" cellpadding="0" role="presentation"><tr><td class="innertd buttonblock" bgcolor="#11A683" style=" border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #11A683;">
+<a target="_blank" class="buttonstyles" style=" font-size: 14px; font-family: Inter, Helvetica, Arial, sans-serif; font-weight: 700; line-height: 32px; color: #FFFFFF; text-align: center; text-decoration: none; display: block; background-color: #11A683; border: 1px solid #11A683; padding: 8px 32px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;" href="https://click.send.grammarly.com/?qs=2c98a701ea1da006bc86520ae73991020bd9f31be800f0f45cf200dda4aee0a2cb87dbe04a8d6a468c289a820c61434c0bbf753eb0c60163d5ed142099569d6a" title=""   data-linkto="other">Upgrade Now</a></td></tr></table></td></tr></table></td></tr></table>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td valign="top">
+                         <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+	
+		<tr>
+			<td align="center" valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" class="MobileTableWidth" width="87%">
+					
+						<tr>
+							<td height="18" style="line-height:18px; font-size:18px;">
+								&nbsp;</td></tr><tr>
+							<td align="center" valign="top">
+								<table border="0" cellpadding="0" cellspacing="0">
+									
+										<tr>
+											<td align="left" valign="top">
+												<a  href="https://click.send.grammarly.com/?qs=2c98a701ea1da0062b1aad26ba03fefb9b5827d1ce32f43805990436b5718a9f5eea3650dc219fcf629c32548537aa9b4373c69960378ce8" target="_blank" title="Facebook"><img alt="Facebook" border="0" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/EBS-Facebook_Footer_Icon.png" style="display: block;" title="Facebook" width="11"></a></td><td align="left" valign="top" width="60">
+											</td><td align="left" valign="top">
+												<a  href="https://click.send.grammarly.com/?qs=2c98a701ea1da00644938bbfd7c27bb2537af45294786df206b486e2cb35bb1511f793a23070d9969fbe913c1feabf98c6e32f74f9829d59" target="_blank" title="Instagram"><img alt="Instagram" border="0" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/EBS-Instagram_Footer_Icon.png" style="display: block;" title="Instagram" width="25"></a></td><td align="left" valign="top" width="58">
+											</td><td align="left" valign="top">
+												<a  href="https://click.send.grammarly.com/?qs=2c98a701ea1da0069ccb755bfca03303d17e75b4041cb3fbfcd60673011994428352a778b3d7e323261d88693cc8f1ca8af450a261e05be5" target="_blank" title="LinkedIn"><img alt="LinkedIn" border="0" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/EBS-LinkedIn_Footer_Icon.png" style="display: block;" title="LinkedIn" width="18"></a></td><td align="left" valign="top" width="58">
+											</td><td align="left" valign="top">
+												<a  href="https://click.send.grammarly.com/?qs=2c98a701ea1da0068983c0bd499dfc8c1c62e7752f459544d58d29e1cbdb0465b0d3324fe9b990d0b1586f1fce2818429ee06dbd913e0c62" target="_blank" title="Twitter"><img alt="Twitter" border="0" src="https://image.send.grammarly.com/lib/fe8f12747760017576/m/2/EBS-Twitter_Footer_Icon.png" style="display: block;" title="Twitter" width="22"></a></td></tr></table></td></tr><tr>
+							<td height="25" style="line-height:25px; font-size:25px;">
+								&nbsp;</td></tr><tr>
+							<td bgcolor="#C6CBDE" height="1" style="line-height:1px; font-size:1px;">
+								&nbsp;</td></tr><tr>
+							<td height="25" style="line-height:25px; font-size:25px;">
+								&nbsp;</td></tr><tr>
+							<td align="center" valign="top">
+								<table border="0" cellpadding="0" cellspacing="0">
+									
+										<tr>
+											<td align="center" class="stack" style="font-weight:400;line-height:20px;font-size:14px;text-align: center;color:#4D536E;" valign="middle">
+												<a  href="https://view.send.grammarly.com/?qs=3922fb457e63787a6c47c1f50b1f53ec97b125c5f9a43cce48a979fb550054b60f20b75c64db3976880136cc5a8046e3fa1e2d2e2a6eaf8a99f5b08b155477db5e98298a21ce7112a35cdd670e3d33a3a0464b2b76c6c8d8" style="color:#4D536E;text-decoration-color:#C6CBDE;" target="_blank">View Web Version</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a  href="https://click.send.grammarly.com/?qs=2c98a701ea1da0063b2b0339804c3f3c9c576b6b20b35c34b934f78ef730a115ce5f56b5e3d2cd59a0ab42ae56fd31bb0f7b4c76def6140f2cacd75aec51f470" style="color:#4D536E;text-decoration-color:#C6CBDE;" target="_blank">Email Preferences</a></td><td align="center" class="stack" style="font-weight:400;line-height:20px;font-size:14px;text-align: center;color:#4D536E;" valign="middle">
+												<span class="hide">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span><a  href="https://click.send.grammarly.com/?qs=6e79c037309ac65d9813f0ae7897798deca66b3d4478901861ad19bd99dbf991968fecb6ac0140479ed12f0a4a06c631ed66b12aaf162545f3ea0e65a23f1f0f" style="color:#4D536E;text-decoration-color:#C6CBDE;" target="_blank">Unsubscribe</a></td></tr></table></td></tr><tr>
+							<td height="25" style="line-height:25px; font-size:25px;">
+								&nbsp;</td></tr><tr>
+							<td style="font-weight:400;line-height:20px;font-size:14px;text-align: center;color:#4D536E;" valign="top">
+								You received this offer for Grammarly Premium because you are currently opted in to receive them via your preference settings. You may adjust your preferences at any time by clicking the link above.<br>
+								<br>
+								&copy; 2021 Grammarly, Inc. 548 Market St. #35410, San Francisco, CA 94104<br>
+								<br>
+								&nbsp;</td></tr></table></td></tr></table> <img border="0" height="1" src="https://gnar.grammarly.com/email-pixel?userId=1541127674&email=rkhurshid@padillainc.com&templateName=Promo_202111_November_50off_5C&sentTime=12/5/2021%206:28:54%20AM" style="display:none" width="1"></td></tr></table>
+                         <!--/Body-->
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+<img src="https://click.send.grammarly.com/open.aspx?ffcb10-fe8d17797365037d7d-fdf215767260077b72107072-fe8f12747760017576-fef010787c6200-fe2312767c660d7d761273-ff2a17737c62&d=60168&bmt=0" width="1" height="1" alt="">
+</body>
+</html>
+
+--wkEBZ5C1Iq2g=_?:--
+

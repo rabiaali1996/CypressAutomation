@@ -1,0 +1,13 @@
+{
+    "adminEmail": "rkhurshid@padillainc.com",
+    "adminPassword": "rk2@#$3232Dadf#34",
+    "agencyEmail": "pagency1@gmail.com",
+    "agencyPassword": "Padilla714",
+    "contractorEmail": "pdbecontractor@gmail.com",
+    "contractorPassword": "Padilla714",
+    "clientName": "New Test City",
+    "clientName1": "ECAT",
+    "existingPrime": "Test DBE Prime",
+    "requiredError":"This field is required.",
+    "projectNumError":"There is already a project with that number."
+}

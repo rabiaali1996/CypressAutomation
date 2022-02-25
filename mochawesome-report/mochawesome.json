@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-13T09:11:06.155Z",
+    "end": "2022-01-13T09:11:23.191Z",
+    "duration": 17036,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "283310ae-05be-492f-8fbf-1f6a59cd2a43",
+      "title": "",
+      "fullFile": "cypress/integration/examples/alertsAndPopups.js",
+      "file": "cypress/integration/examples/alertsAndPopups.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2bd453de-926f-4198-80d8-1a88c1e5e679",
+          "title": "Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Alerts and Popups",
+              "fullTitle": "Test Suite Alerts and Popups",
+              "timedOut": null,
+              "duration": 10302,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Check boxes\ncy.visit(\"http://qaclickacademy.com/practice.php\");\ncy.get('#alertbtn').click();\ncy.get('[value=\"Confirm\"]').click(); //window:alert\ncy.on('window:alert', function (str) {\n  //Mocha\n  expect(str).to.equal('Hello , share this practice page and share your knowledge');\n});\ncy.on('window:confirm', function (str) {\n  //Mocha\n  expect(str).to.equal('Hello , Are you sure you want to confirm?');\n});",
+              "err": {},
+              "uuid": "e137547b-ff43-498c-817e-8079db657d9d",
+              "parentUUID": "2bd453de-926f-4198-80d8-1a88c1e5e679",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e137547b-ff43-498c-817e-8079db657d9d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10302,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.0.1"
+    }
+  }
+}
